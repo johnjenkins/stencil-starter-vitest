@@ -2,7 +2,7 @@
   // These tasks will run in order when initializing your CodeSandbox project.
   "setupTasks": [
     {
-      "command": "pnpm install && pnpm playwright-core install chromium",
+      "command": "pnpm install",
       "name": "Installing Dependencies"
     }
   ],

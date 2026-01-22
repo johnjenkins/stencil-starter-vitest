@@ -1,11 +1,11 @@
 import { defineVitestConfig } from '@stencil/vitest/config';
-import { playwright } from '@vitest/browser-playwright';
+// import { playwright } from '@vitest/browser-playwright';
 
 export default defineVitestConfig({
   stencilConfig: './stencil.config.ts',
   test: {
     projects: [
-      // Unit tests - node environment for functions / logic
+      /** Unit tests - node environment for functions / logic */
       {
         test: {
           name: 'unit',
@@ -14,7 +14,7 @@ export default defineVitestConfig({
         },
       },
 
-      // Spec tests - via a node DOM of your choice
+      /** Spec tests - via a node DOM of your choice */
       {
         test: {
           name: 'spec',
@@ -23,21 +23,23 @@ export default defineVitestConfig({
           environment: 'stencil',
         },
       },
-      
-      // Browser tests
-      {
-        test: {
-          name: 'browser',
-          include: ['src/**/*.test.{ts,tsx}'],
-          setupFiles: ['./vitest-setup.ts'],
-          browser: {
-            enabled: true,
-            provider: playwright(),
-            headless: true,
-            instances: [{ browser: 'chromium' }],
-          },
-        },
-      },
+
+      /** Browser tests */
+      // // These cannot work in a codesandbox container. 
+      // // Only enable if running locally.
+      // {
+      //   test: {
+      //     name: 'browser',
+      //     include: ['src/**/*.test.{ts,tsx}'],
+      //     setupFiles: ['./vitest-setup.ts'],
+      //     browser: {
+      //       enabled: true,
+      //       provider: playwright(),
+      //       headless: true,
+      //       instances: [{ browser: 'chromium' }],
+      //     },
+      //   },
+      // },
     ],
   },
 });
