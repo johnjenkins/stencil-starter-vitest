@@ -1,6 +1,6 @@
 # Stencil + Vitest Starter
 
-A minimal reproduction monorepo for testing Stencil components with the Stencil Vitest library.
+A minimal reproduction monorepo for testing Stencil components with the Stencil Vitest library. 
 
 ## Versions
 
@@ -22,3 +22,5 @@ pnpm test:watch
 ```
 
 Observe the test results in the terminal.
+
+Note: Playwright cannot run within CodeSandbox; if you want to demonstrate browser tests, please fork this repo in Github.
