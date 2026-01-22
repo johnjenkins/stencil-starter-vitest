@@ -2,7 +2,7 @@
   // These tasks will run in order when initializing your CodeSandbox project.
   "setupTasks": [
     {
-      "command": "pnpm install",
+      "command": "pnpm install && pnpm exec playwright install",
       "name": "Installing Dependencies"
     }
   ],
