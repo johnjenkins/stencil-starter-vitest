@@ -1,8 +1,0 @@
-tasks:
-  - name: Install Dependencies
-    init: pnpm install && pnpm playwright-core install chromium
-    command: pnpm test
-
-vscode:
-  extensions:
-    - esbenp.prettier-vscode
