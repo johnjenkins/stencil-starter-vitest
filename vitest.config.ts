@@ -13,6 +13,7 @@ export default defineVitestConfig({
           environment: 'node',
         },
       },
+
       // Spec tests - via a node DOM of your choice
       {
         test: {
@@ -20,17 +21,9 @@ export default defineVitestConfig({
           include: ['src/**/*.spec.{ts,tsx}'],
           setupFiles: ['./vitest-setup.ts'],
           environment: 'stencil',
-
-          // Optional environment options
-
-          // environmentOptions: {
-          //   stencil: {
-          //     domEnvironment: 'happy-dom' | 'jsdom' | 'mock-doc' (default)
-          //                      ^^ Make sure to install relevant packages
-          //   },
-          // },
         },
       },
+      
       // Browser tests
       {
         test: {

@@ -1,0 +1,57 @@
+{
+  // These tasks will run in order when initializing your CodeSandbox project.
+  "setupTasks": [
+    {
+      "command": "pnpm install",
+      "name": "Installing Dependencies"
+    }
+  ],
+
+  // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+  "tasks": {
+    "start": {
+      "name": "start",
+      "command": "pnpm start",
+      "runAtStart": true,
+      "preview": {
+        "port": 5173
+      }
+    },
+    "start:stencil": {
+      "name": "start:stencil",
+      "command": "pnpm start:stencil"
+    },
+    "start:react-wrapper": {
+      "name": "start:react-wrapper",
+      "command": "pnpm start:react-wrapper"
+    },
+    "start:react-app": {
+      "name": "start:react-app",
+      "command": "pnpm start:react-app"
+    },
+    "start:react-app:wait": {
+      "name": "start:react-app:wait",
+      "command": "pnpm start:react-app:wait"
+    },
+    "start:reload-trigger": {
+      "name": "start:reload-trigger",
+      "command": "pnpm start:reload-trigger"
+    },
+    "build": {
+      "name": "build",
+      "command": "pnpm build"
+    },
+    "build:stencil": {
+      "name": "build:stencil",
+      "command": "pnpm build:stencil"
+    },
+    "build:react-wrapper": {
+      "name": "build:react-wrapper",
+      "command": "pnpm build:react-wrapper"
+    },
+    "build:react-app": {
+      "name": "build:react-app",
+      "command": "pnpm build:react-app"
+    }
+  }
+}

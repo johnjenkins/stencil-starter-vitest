@@ -34,16 +34,17 @@
   "scripts": {
     "build": "stencil build",
     "start": "stencil build --dev --watch --serve",
-    "test": "stencil-test --project spec",
+    "test": "stencil-test",
+    "test:watch": "stencil-test --watch",
     "generate": "stencil generate"
   },
   "devDependencies": {
-    "@stencil/core": "^4.27.1",
-    "@stencil/vitest": "^1.1.1",
+    "@stencil/core": "latest",
+    "@stencil/vitest": "latest",
     "@types/node": "^22.13.5",
     "@vitest/browser-playwright": "^4.0.17",
     "vitest": "^4.0.17",
-    "vitest-environment-stencil": "^1.1.1"
+    "vitest-environment-stencil": "latest"
   },
   "license": "MIT"
 }

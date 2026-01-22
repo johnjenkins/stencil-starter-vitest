@@ -12,8 +12,8 @@ importers:
         specifier: ^4.27.1
         version: 4.41.2
       '@stencil/vitest':
-        specifier: ^1.1.1
-        version: 1.1.2(@stencil/core@4.41.2)(@vitest/browser-playwright@4.0.17)(playwright@1.57.0)(vitest@4.0.17)
+        specifier: ../stencil-test-utils
+        version: link:../stencil-test-utils
       '@types/node':
         specifier: ^22.13.5
         version: 22.19.7
