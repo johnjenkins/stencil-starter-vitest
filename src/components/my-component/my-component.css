@@ -1,3 +1,51 @@
 :host {
   display: block;
+  font-family: system-ui, sans-serif;
+}
+
+.container {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 300px;
+}
+
+.greeting {
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.greeting-text {
+  margin: 0 0 0.5rem 0;
+}
+
+.toggle-btn {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.count {
+  min-width: 80px;
+  text-align: center;
+}
+
+.increment-btn,
+.decrement-btn {
+  width: 32px;
+  height: 32px;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.increment-btn:disabled,
+.decrement-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

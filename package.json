@@ -43,8 +43,7 @@
     "@stencil/vitest": "latest",
     "@types/node": "^22.13.5",
     "@vitest/browser-playwright": "^4.0.17",
-    "vitest": "^4.0.17",
-    "vitest-environment-stencil": "latest"
+    "vitest": "^4.0.17"
   },
   "license": "MIT"
 }

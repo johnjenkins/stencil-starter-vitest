@@ -16,13 +16,43 @@ export namespace Components {
          */
         "last": string;
         /**
+          * Maximum counter value
+          * @default 10
+         */
+        "max": number;
+        /**
           * The middle name
          */
         "middle": string;
+        /**
+          * Minimum counter value
+          * @default 0
+         */
+        "min": number;
+        /**
+          * Reset the counter to zero
+         */
+        "reset": () => Promise<void>;
     }
 }
+export interface MyComponentCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMyComponentElement;
+}
 declare global {
+    interface HTMLMyComponentElementEventMap {
+        "countChanged": number;
+        "greetingToggled": boolean;
+    }
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLMyComponentElementEventMap>(type: K, listener: (this: HTMLMyComponentElement, ev: MyComponentCustomEvent<HTMLMyComponentElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLMyComponentElementEventMap>(type: K, listener: (this: HTMLMyComponentElement, ev: MyComponentCustomEvent<HTMLMyComponentElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLMyComponentElement: {
         prototype: HTMLMyComponentElement;
@@ -43,9 +73,27 @@ declare namespace LocalJSX {
          */
         "last"?: string;
         /**
+          * Maximum counter value
+          * @default 10
+         */
+        "max"?: number;
+        /**
           * The middle name
          */
         "middle"?: string;
+        /**
+          * Minimum counter value
+          * @default 0
+         */
+        "min"?: number;
+        /**
+          * Emitted when the counter changes
+         */
+        "onCountChanged"?: (event: MyComponentCustomEvent<number>) => void;
+        /**
+          * Emitted when the greeting is toggled
+         */
+        "onGreetingToggled"?: (event: MyComponentCustomEvent<boolean>) => void;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
